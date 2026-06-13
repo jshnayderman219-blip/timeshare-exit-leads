@@ -193,6 +193,29 @@
         <input type="text" name="resort" placeholder="e.g. Wyndham Bonnet Creek">
       </div>
       <div class="form-group">
+        <label>Are you past due on your timeshare?</label>
+        <div style="display:flex; gap:12px; margin-top:6px;">
+          <label style="display:flex; align-items:center; gap:5px; font-weight:400; cursor:pointer;">
+            <input type="radio" name="pastDue" value="No" style="width:auto;" onchange="document.getElementById('pastDueDetails').style.display='none'"> No, I'm current
+          </label>
+          <label style="display:flex; align-items:center; gap:5px; font-weight:400; cursor:pointer;">
+            <input type="radio" name="pastDue" value="Yes" style="width:auto;" onchange="document.getElementById('pastDueDetails').style.display='block'"> Yes
+          </label>
+        </div>
+        <div id="pastDueDetails" style="display:none; margin-top:10px;">
+          <label style="font-size:13px; font-weight:600; color:#334155;">How far behind?</label>
+          <select name="pastDueDuration" style="width:100%; padding:10px 14px; border:2px solid #e2e8f0; border-radius:8px; font-size:15px; font-family:inherit; margin-top:4px;">
+            <option value="">Select...</option>
+            <option value="Under 3 months">Under 3 months</option>
+            <option value="3-6 months">3-6 months</option>
+            <option value="6-12 months">6-12 months</option>
+            <option value="1-2 years">1-2 years</option>
+            <option value="2-3 years">2-3 years</option>
+            <option value="Over 3 years">Over 3 years</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
         <label>Annual Maintenance Fee</label>
         <select name="maintenance">
           <option value="">Select range...</option>
