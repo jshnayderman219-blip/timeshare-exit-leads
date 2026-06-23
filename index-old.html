@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Report: How to Legally Exit Your Timeshare</title>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #FF385C;
+      --primary-dark: #E31C5F;
+      --bg: #FFFFFF;
+      --bg-light: #F7F7F7;
+      --text: #222222;
+      --text-light: #717171;
+      --text-muted: #B0B0B0;
+      --border: #DDDDDD;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.08);
+      --shadow-md: 0 6px 16px rgba(0,0,0,0.12);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a1a2e 100%);
+      color: white;
+      padding: 100px 24px 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%; width: 200%; height: 200%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(255,56,92,0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255,56,92,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 70%);
+      animation: heroShift 20s ease-in-out infinite;
+    }
+    @keyframes heroShift {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(2%, -1%) rotate(1deg); }
+      66% { transform: translate(-1%, 1%) rotate(-1deg); }
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 720px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,56,92,0.15);
+      border: 1px solid rgba(255,56,92,0.3);
+      color: #FF385C;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .hero .hero-sub {
+      font-size: 19px;
+      color: rgba(255,255,255,0.75);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.5;
+    }
+    .hero-cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #FF385C 0%, #E31C5F 100%);
+      color: white;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 14px rgba(255,56,92,0.4);
+    }
+    .hero-cta:hover {
+      transform: scale(1.04);
+      box-shadow: 0 8px 24px rgba(255,56,92,0.5);
+    }
+    .hero-stats {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat .number {
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+    }
+    .hero-stat .label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      margin-top: 2px;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      padding: 24px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .trust-bar span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 16px;
+      letter-spacing: -0.5px;
+    }
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--text-light);
+      max-width: 560px;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+
+    /* ── PAIN CARDS ── */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .pain-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .pain-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .pain-card .icon { font-size: 32px; margin-bottom: 12px; }
+    .pain-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .pain-card p { font-size: 14px; color: var(--text-light); line-height: 1.5; }
+
+    /* ── GUIDE GRID ── */
+    .guide-section { background: var(--bg-light); }
+    .guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .guide-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .guide-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .guide-card-img {
+      height: 120px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+    .guide-card:nth-child(2) .guide-card-img { background: linear-gradient(135deg, #0f3460, #16213e); }
+    .guide-card:nth-child(3) .guide-card-img { background: linear-gradient(135deg, #1a3a5c, #0f3460); }
+    .guide-card:nth-child(4) .guide-card-img { background: linear-gradient(135deg, #2d3436, #636e72); }
+    .guide-card:nth-child(5) .guide-card-img { background: linear-gradient(135deg, #6c5ce7, #a29bfe); }
+    .guide-card:nth-child(6) .guide-card-img { background: linear-gradient(135deg, #e17055, #fab1a0); }
+    .guide-card-body { padding: 24px; }
+    .guide-card h4 { font-size: 17px; font-weight: 700; margin-bottom: 6px; color: var(--text); }
+    .guide-card p { font-size: 14px; color: var(--text-light); line-height: 1.5; }
+
+    /* ── FORM ── */
+    .form-section { background: var(--text); color: white; }
+    .form-section .section-label { color: var(--primary); }
+    .form-section .section-title { color: white; }
+    .form-section .section-subtitle { color: rgba(255,255,255,0.65); }
+    .form-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+    .form-benefits { display: flex; flex-direction: column; gap: 24px; }
+    .form-benefit {
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .form-benefit .check {
+      width: 28px; height: 28px; min-width: 28px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700;
+    }
+    .form-benefit h5 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .form-benefit p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.4; }
+
+    .form-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      color: var(--text);
+      box-shadow: var(--shadow-lg);
+    }
+    .form-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+    .form-card .form-intro { font-size: 14px; color: var(--text-light); margin-bottom: 24px; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-family: inherit;
+      transition: border-color 0.2s;
+      background: white;
+      color: var(--text);
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--text);
+    }
+    .form-group input::placeholder { color: var(--text-muted); }
+
+    .radio-group { display: flex; gap: 12px; margin-top: 4px; }
+    .radio-pill {
+      flex: 1; text-align: center; padding: 12px;
+      border: 2px solid var(--border); border-radius: var(--radius-sm);
+      font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.15s;
+      color: var(--text-light);
+    }
+    .radio-pill:hover { border-color: var(--text-light); }
+    .radio-pill input { display: none; }
+    .radio-pill:has(input:checked) {
+      border-color: var(--text);
+      background: var(--text);
+      color: white;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #FF385C 0%, #E31C5F 100%);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 4px 12px rgba(255,56,92,0.3);
+    }
+    .submit-btn:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(255,56,92,0.4); }
+    .submit-btn:disabled { opacity: 0.6; transform: none; cursor: not-allowed; }
+
+    .form-note { font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 14px; }
+
+    /* ── TESTIMONIAL ── */
+    .testimonial-section { background: var(--bg-light); }
+    .testimonial-card {
+      max-width: 650px; margin: 0 auto;
+      background: white; border-radius: var(--radius-lg); padding: 40px 36px;
+      box-shadow: var(--shadow-md); text-align: center;
+    }
+    .testimonial-card .stars { font-size: 20px; margin-bottom: 16px; letter-spacing: 2px; }
+    .testimonial-card blockquote {
+      font-size: 18px; line-height: 1.6; color: var(--text);
+      font-style: italic; margin-bottom: 20px;
+    }
+    .testimonial-card .attrib { font-weight: 700; color: var(--text); }
+    .testimonial-card .attrib-sub { font-size: 13px; color: var(--text-light); }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      text-align: center;
+      padding: 100px 24px;
+      background: linear-gradient(180deg, white 0%, var(--bg-light) 100%);
+    }
+    .final-cta h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+    .final-cta p { font-size: 17px; color: var(--text-light); max-width: 500px; margin: 0 auto 28px; }
+    .final-cta .hero-cta { font-size: 17px; padding: 18px 44px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg-light);
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* ── OVERLAY ── */
+    #thankYouOverlay {
+      display: none;
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 24px;
+    }
+    #thankYouOverlay .check-circle {
+      width: 80px; height: 80px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px;
+      margin-bottom: 24px;
+    }
+    #thankYouOverlay h2 { font-size: 28px; margin-bottom: 8px; }
+    #thankYouOverlay p { font-size: 16px; opacity: 0.7; max-width: 400px; }
+    #overlayError {
+      display: none;
+      margin-top: 16px;
+      padding: 12px 20px;
+      background: rgba(255,56,92,0.15);
+      border: 1px solid rgba(255,56,92,0.3);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      max-width: 420px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .hero-stats { gap: 24px; }
+      .form-layout { grid-template-columns: 1fr; gap: 40px; }
+      .section-title { font-size: 28px; }
+      .guide-grid { grid-template-columns: 1fr; }
+      .pain-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .pain-grid { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 28px; }
+      .hero { padding: 60px 16px 50px; }
+      section { padding: 50px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✦ FREE GUIDE</div>
+    <h1>Every legitimate way<br>out of a timeshare.</h1>
+    <p class="hero-sub">
+      A complete, no-BS report covering every exit path — from resort deed-back programs to legal cancellation.
+      No upfront fees. No scams. Just the information you need.
+    </p>
+    <a href="#download" class="hero-cta">Download the free guide</a>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="number">9M+</div>
+        <div class="label">U.S. timeshare owners</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">$1,400/yr</div>
+        <div class="label">Average maintenance fees</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">$5,000+</div>
+        <div class="label">Typical exit scam cost</div>
+      </div>
+      <div class="hero-stat">
+        <div class="number">7</div>
+        <div class="label">Legitimate exit paths</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar">
+  <span>🔒 No spam, ever</span>
+  <span>📄 FTC-compliant information</span>
+  <span>⏱️ 10-minute read</span>
+  <span>✅ Instant download</span>
+</div>
+
+<!-- ═══ THE PROBLEM ═══ -->
+<section>
+  <div class="container">
+    <div class="section-label">The Problem</div>
+    <h2 class="section-title">You bought the dream.<br>Now you're stuck paying for it.</h2>
+    <p class="section-subtitle">
+      Rising maintenance fees. A property you can't sell. An industry that profits from keeping you confused.
+      If any of this sounds familiar, you're exactly who this guide was written for.
+    </p>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">📈</div>
+        <h4>Fees that never stop climbing</h4>
+        <p>Maintenance fees increase every year — and you pay them whether you use the property or not.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">📉</div>
+        <h4>Can't sell for what you paid</h4>
+        <p>The resale market is dead. Your timeshare is worth pennies on the dollar — if it sells at all.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">💰</div>
+        <h4>Exit companies want $5,000+</h4>
+        <p>Most demand huge upfront fees. The FTC actively warns about timeshare exit scams for a reason.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">😰</div>
+        <h4>You don't know your options</h4>
+        <p>Resorts make the process confusing on purpose. Most owners don't know free exit programs exist.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">🎯</div>
+        <h4>Every situation is different</h4>
+        <p>What works for a Wyndham owner doesn't work for Hilton. Loan status, state laws, contract type — it all matters.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">🚩</div>
+        <h4>Scared of getting scammed</h4>
+        <p>You should be. Thousands lose money to fraudulent exit companies every year. We show you how to spot them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT'S INSIDE ═══ -->
+<section class="guide-section">
+  <div class="container">
+    <div class="section-label">What's Inside</div>
+    <h2 class="section-title">Everything you need to<br>make an informed decision.</h2>
+    <p class="section-subtitle">
+      Seven chapters. Every legitimate exit path. Zero fluff. Here's what you'll learn.
+    </p>
+
+    <div class="guide-grid">
+      <div class="guide-card">
+        <div class="guide-card-img">🏨</div>
+        <div class="guide-card-body">
+          <h4>Resort Deed-Back Programs</h4>
+          <p>Wyndham, Marriott, Hilton, Holiday Inn, Diamond, Westgate, Bluegreen — the complete list of what they offer and exactly what to say when you call.</p>
+        </div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-img">🔄</div>
+        <div class="guide-card-body">
+          <h4>How to Give It Away (Legally)</h4>
+          <p>Where to list your timeshare for $1, how to use free transfer forums, and which closing companies handle the paperwork for under $200.</p>
+        </div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-img">⚖️</div>
+        <div class="guide-card-body">
+          <h4>Legal Exit Options</h4>
+          <p>When contract law is on your side — misrepresentation, cooling-off periods, and state-specific protections that could cancel your obligation entirely.</p>
+        </div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-img">🚩</div>
+        <div class="guide-card-body">
+          <h4>Exit Scam Red Flags</h4>
+          <p>The FTC's own warning signs: upfront fees, "guarantees," high-pressure tactics. Learn to spot a scam before you lose thousands.</p>
+        </div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-img">📋</div>
+        <div class="guide-card-body">
+          <h4>What Happens If You Stop Paying</h4>
+          <p>Credit impact, foreclosure, deficiency judgments — and which states protect you. Know the full consequences before you act.</p>
+        </div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-card-img">📞</div>
+        <div class="guide-card-body">
+          <h4>Sample Call Scripts</h4>
+          <p>Word-for-word scripts for calling your resort's exit department. Know exactly what to say — and what not to say — to get results.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FORM ═══ -->
+<section class="form-section" id="download">
+  <div class="container">
+    <div class="form-layout">
+      <div class="form-benefits">
+        <div class="section-label">Free Download</div>
+        <h2 class="section-title">Get the complete guide.<br>No strings attached.</h2>
+        <p class="section-subtitle">
+          Enter your details below and we'll instantly unlock the full report. No credit card. No spam. Just the information that could save you years of stress and thousands of dollars.
+        </p>
+
+        <div class="form-benefit">
+          <div class="check">✓</div>
+          <div>
+            <h5>Every legitimate exit path, ranked</h5>
+            <p>From free resort programs to legal cancellation — we show you what works and what doesn't.</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="check">✓</div>
+          <div>
+            <h5>Scam red flags from the FTC</h5>
+            <p>Know exactly what to watch for before you talk to any exit company.</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="check">✓</div>
+          <div>
+            <h5>Word-for-word call scripts</h5>
+            <p>What to say when you call your resort's exit department to get real results.</p>
+          </div>
+        </div>
+        <div class="form-benefit">
+          <div class="check">✓</div>
+          <div>
+            <h5>Delivered instantly</h5>
+            <p>No waiting. No email chains. Fill out the form and you're reading in seconds.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-card" id="formCard">
+        <h3>Download your free report</h3>
+        <p class="form-intro">One form. Instant access. No obligation.</p>
+
+        <form id="leadForm">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="John Smith" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="john@email.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="(555) 123-4567" required autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label>Timeshare Resort Name</label>
+            <input type="text" name="resort" placeholder="e.g. Wyndham Bonnet Creek">
+          </div>
+          <div class="form-group">
+            <label>Are you past due on your timeshare?</label>
+            <div class="radio-group">
+              <label class="radio-pill">
+                <input type="radio" name="pastDue" value="No" onchange="document.getElementById('pastDueDetails').style.display='none'">
+                No, I'm current
+              </label>
+              <label class="radio-pill">
+                <input type="radio" name="pastDue" value="Yes" onchange="document.getElementById('pastDueDetails').style.display='block'">
+                Yes
+              </label>
+            </div>
+            <div id="pastDueDetails" style="display:none; margin-top:12px;">
+              <select name="pastDueDuration" style="width:100%; padding:14px 16px; border:2px solid var(--border); border-radius:8px; font-size:15px; font-family:inherit;">
+                <option value="">How far behind?</option>
+                <option value="Under 3 months">Under 3 months</option>
+                <option value="3-6 months">3-6 months</option>
+                <option value="6-12 months">6-12 months</option>
+                <option value="1-2 years">1-2 years</option>
+                <option value="2-3 years">2-3 years</option>
+                <option value="Over 3 years">Over 3 years</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Annual Maintenance Fee</label>
+            <select name="maintenance">
+              <option value="">Select range...</option>
+              <option value="Under $500">Under $500</option>
+              <option value="$500 - $1,000">$500 - $1,000</option>
+              <option value="$1,000 - $2,000">$1,000 - $2,000</option>
+              <option value="$2,000 - $3,000">$2,000 - $3,000</option>
+              <option value="Over $3,000">Over $3,000</option>
+            </select>
+          </div>
+          <button type="submit" class="submit-btn">Get My Free Guide →</button>
+          <p class="form-note">We'll never share your information. Report is delivered instantly.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIAL ═══ -->
+<section class="testimonial-section">
+  <div class="container">
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <blockquote>
+        "I almost paid an exit company $8,000. Then I found this guide. Called my resort, asked for their deed-back program, and 90 days later I was out. Cost me nothing. This would have saved me months of stress if I'd found it sooner."
+      </blockquote>
+      <p class="attrib">David R.</p>
+      <p class="attrib-sub">Former Wyndham Owner, Florida</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready to get out of your timeshare?</h2>
+    <p>The guide is free. The information is priceless. Don't make a move until you've read it.</p>
+    <a href="#download" class="hero-cta">Get the free guide now</a>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  © 2025 Timeshare Exit Report &nbsp;·&nbsp; This is an informational guide, not a law firm &nbsp;·&nbsp; For educational purposes. Consult an attorney for legal advice specific to your situation.
+</footer>
+
+<!-- ═══ THANK YOU OVERLAY ═══ -->
+<div id="thankYouOverlay">
+  <div class="check-circle">✓</div>
+  <h2>Your report is ready!</h2>
+  <p>Redirecting you now…</p>
+  <div id="overlayError">
+    <strong>Taking a little longer than expected.</strong> Your information is saved — our server is waking up. You'll have the report in just a moment.
+  </div>
+</div>
+
+<script>
+document.getElementById('leadForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
+  data.timestamp = new Date().toISOString();
+  data.source = document.referrer || window.location.href;
+
+  // Save to localStorage immediately (backup)
+  const leads = JSON.parse(localStorage.getItem('timeshare_leads') || '[]');
+  leads.push(data);
+  localStorage.setItem('timeshare_leads', JSON.stringify(leads));
+
+  // Show overlay + disable button
+  const overlay = document.getElementById('thankYouOverlay');
+  const btn = this.querySelector('.submit-btn');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+  overlay.style.display = 'flex';
+
+  // Send to backend (Render cold-starts take up to 60s)
+  let serverSaved = false;
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 55000);
+
+    const resp = await fetch('/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+      signal: controller.signal
+    });
+    clearTimeout(timeout);
+
+    if (resp.ok) serverSaved = true;
+  } catch(err) {
+    document.getElementById('overlayError').style.display = 'block';
+    console.log('Server save delayed:', err.message);
+  }
+
+  setTimeout(() => {
+    window.location.href = 'guide.html';
+  }, serverSaved ? 1200 : 3000);
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
